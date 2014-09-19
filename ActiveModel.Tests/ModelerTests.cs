@@ -27,34 +27,34 @@ namespace ActiveModel.Tests
 
         [Theory]
         [AutoData]
-        public void should_add_a_root_entity(Profile employee)
+        public void should_add_a_root_entity(Profile profile)
         {
-            var result = (dynamic)Modeler.GetModel(employee);
-            Assert.NotNull(result.employee);
+            var result = (dynamic)Modeler.GetModel(profile);
+            Assert.NotNull(result.profile);
         }
 
         [Theory]
         [AutoData]
-        public void should_add_a_root_entity_in_plural_in_list(List<Profile> employees)
+        public void should_add_a_root_entity_in_plural_in_list(List<Profile> profiles)
         {
-            var result = (dynamic)Modeler.GetModel(employees);
-            Assert.NotNull(result.employees);
+            var result = (dynamic)Modeler.GetModel(profiles);
+            Assert.NotNull(result.profiles);
         }
 
         [Theory]
         [AutoData]
-        public void should_add_a_root_entity_in_plural_in_ilist(IList<Profile> employees)
+        public void should_add_a_root_entity_in_plural_in_ilist(IList<Profile> profiles)
         {
-            var result = (dynamic)Modeler.GetModel(employees);
-            Assert.NotNull(result.employees);
+            var result = (dynamic)Modeler.GetModel(profiles);
+            Assert.NotNull(result.profiles);
         }
 
         [Theory]
         [AutoData]
-        public void should_add_a_root_entity_in_plural_in_array(Profile[] employees)
+        public void should_add_a_root_entity_in_plural_in_array(Profile[] profiles)
         {
-            var result = (dynamic)Modeler.GetModel(employees);
-            Assert.NotNull(result.employees);
+            var result = (dynamic)Modeler.GetModel(profiles);
+            Assert.NotNull(result.profiles);
         }
     }
 }

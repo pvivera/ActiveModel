@@ -11,13 +11,13 @@ namespace ActiveModel.Tests
         public RootAsOptionTests()
         {
             _profile = new Profile {Name = "Name 1", Description = "Description 1", Comments = "Comments 1"};
-            _serializer = new ProfileSerializer(_profile, new Options{Root = "initialize"});
         }
 
         [Fact]
         public void root_using_as_json()
         {
-            Assert.Equal(@"{""initialize"":{""Name"":""Name 1"",""Description"":""Description 1"",""Comments"":""Comments 1""}}", _serializer.AsJSON());
+            var serializer = new ProfileSerializer(_profile, new Options { Root = "initialize" });
+            Assert.Equal(@"{""initialize"":{""Name"":""Name 1"",""Description"":""Description 1"",""Comments"":""Comments 1""}}", serializer.AsJSON());
         }
 
         [Fact]
